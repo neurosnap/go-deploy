@@ -120,6 +120,7 @@ func (c *Client) GetLogDrain(logDrainID int64) (*LogDrain, error) {
 	logDrain.DrainPort = swag.Int64Value(response.Payload.DrainPort)
 	logDrain.LoggingToken = swag.StringValue(response.Payload.LoggingToken)
 	logDrain.URL = swag.StringValue(response.Payload.URL)
+    fmt.Printf("DRAIN APPS DEPLOY %t", *response.Payload.DrainApps)
 	logDrain.DrainApps = swag.BoolValue(response.Payload.DrainApps)
 	logDrain.DrainDatabases = swag.BoolValue(response.Payload.DrainDatabases)
 	logDrain.DrainEphemeralSessions = swag.BoolValue(response.Payload.DrainEphemeralSessions)
